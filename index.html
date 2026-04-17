@@ -6,7 +6,20 @@
 
 <title>Gulam Hamid | TeraSyncTech</title>
 
+<!-- ✅ SOCIAL PREVIEW (LOGO FIXED) -->
+<meta property="og:title" content="Gulam Hamid | TeraSyncTech">
+<meta property="og:description" content="Helping Businesses Go Digital & Increase Sales 🚀">
+<meta property="og:image" content="https://terasynctech.github.io/samridhi-hardware/logo.png">
+<meta property="og:url" content="https://terasynctech.github.io/samridhi-hardware/?v=1">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://terasynctech.github.io/samridhi-hardware/logo.png">
+
+<link rel="icon" href="https://terasynctech.github.io/samridhi-hardware/logo.png">
+
 <style>
+
+/* ===== BODY ===== */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -15,6 +28,25 @@ body {
     text-align: center;
 }
 
+/* ===== FLOATING BACKGROUND ===== */
+body::before {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0,150,255,0.4), transparent);
+    top: -100px;
+    left: -100px;
+    animation: moveGlow 8s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes moveGlow {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(200px,200px); }
+}
+
+/* ===== CARD ===== */
 .card {
     max-width: 400px;
     margin: 40px auto;
@@ -22,14 +54,30 @@ body {
     border-radius: 20px;
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(15px);
-    box-shadow: 0 0 25px rgba(0,150,255,0.4);
+    box-shadow: 0 0 30px rgba(0,150,255,0.5);
+    animation: fadeUp 1s ease;
 }
 
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== LOGO ===== */
 .logo {
-    width: 120px;
+    width: 130px;
     margin-bottom: 15px;
+    border-radius: 12px;
+    animation: zoomIn 1s ease;
 }
 
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* ===== TEXT ===== */
 h1 {
     margin: 5px 0;
     font-size: 24px;
@@ -40,6 +88,7 @@ p {
     color: #ccc;
 }
 
+/* ===== BUTTON ===== */
 .btn {
     display: block;
     margin: 12px auto;
@@ -51,30 +100,44 @@ p {
     color: white;
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     transition: 0.3s;
+    animation: pulse 2s infinite;
 }
 
 .btn:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 15px #00c6ff;
 }
 
+/* ===== BUTTON PULSE ===== */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0px #00c6ff; }
+    50% { box-shadow: 0 0 20px #00c6ff; }
+    100% { box-shadow: 0 0 0px #00c6ff; }
+}
+
+/* ===== QR ===== */
 .qr {
     width: 150px;
     margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00c6ff;
 }
 
-/* UPI */
+/* ===== UPI ===== */
 .upi {
     width: 180px;
     margin-top: 15px;
     border-radius: 10px;
+    box-shadow: 0 0 10px #00c6ff;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 .footer {
     margin-top: 15px;
     font-size: 12px;
     color: #aaa;
 }
+
 </style>
 </head>
 
@@ -104,19 +167,15 @@ p {
 📥 Save Contact
 </a>
 
-<!-- LOCATION -->
 <a class="btn" href="https://maps.app.goo.gl/nY2oyjqk4dhJVGFB8" target="_blank">
 📍 Visit Our Office
 </a>
 
-<!-- SERVICES -->
 <p>ERP Software | Website Development | Digital Marketing | Mobile Apps</p>
 
-<!-- CONNECT QR -->
 <img src="qr.png" class="qr">
 <p><b>Scan to connect instantly</b></p>
 
-<!-- UPI SECTION -->
 <h3>💰 Pay via UPI</h3>
 
 <img src="upi.png" class="upi">
@@ -129,7 +188,6 @@ p {
 
 <p>Scan & Pay or Click to Pay Instantly</p>
 
-<!-- FOOTER -->
 <div class="footer">
 “Let’s Build Your Digital Future” 🚀
 </div>
