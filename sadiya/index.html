@@ -11,17 +11,18 @@
 <meta property="og:title" content="Sadiya Zehra | TeraSyncTech">
 <meta property="og:description" content="Helping Businesses Grow Digitally 🚀">
 
-<meta property="og:image" content="https://terasynctech.github.io/sadiya-card/logo.png">
-<meta property="og:url" content="https://terasynctech.github.io/sadiya-card/">
+<!-- 🔥 IMPORTANT: USE FULL URL -->
+<meta property="og:image" content="https://terasynctech.github.io/sadiya-card/logo.png?v=2">
+<meta property="og:url" content="https://terasynctech.github.io/sadiya-card/?v=2">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://terasynctech.github.io/sadiya-card/logo.png">
+<meta name="twitter:image" content="https://terasynctech.github.io/sadiya-card/logo.png?v=2">
 
 <link rel="icon" href="logo.png">
 
 <style>
 
-/* ===== BODY ===== */
+/* BODY */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -31,7 +32,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== GLOW EFFECT ===== */
+/* GLOW */
 body::before {
     content: "";
     position: fixed;
@@ -49,14 +50,13 @@ body::before {
     100% { transform: translate(200px,200px); }
 }
 
-/* ===== CONTAINER ===== */
+/* CARD */
 .container {
     max-width: 420px;
     margin: auto;
     padding: 20px;
 }
 
-/* ===== CARD ===== */
 .card {
     background: rgba(255,255,255,0.06);
     border-radius: 25px;
@@ -71,130 +71,7 @@ body::before {
     to {opacity:1; transform: translateY(0);}
 }
 
-/* ===== LOGO ===== */
+/* LOGO */
 .logo {
     width: 120px;
-    margin-bottom: 15px;
-    animation: float 3s infinite ease-in-out;
-}
-
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-/* ===== TEXT ===== */
-h1 {
-    margin: 5px 0;
-    font-size: 24px;
-}
-
-p {
-    margin: 5px 0;
-    color: #ccc;
-}
-
-/* ===== BUTTON ===== */
-.btn {
-    display: block;
-    margin: 12px auto;
-    padding: 13px;
-    width: 90%;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-/* SHINE EFFECT */
-.btn::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    top: 0;
-    left: -100%;
-    transition: 0.5s;
-}
-
-.btn:hover::before {
-    left: 100%;
-}
-
-.btn:hover {
-    transform: scale(1.06);
-}
-
-/* ===== QR ===== */
-.qr {
-    width: 150px;
-    margin-top: 15px;
-    border-radius: 10px;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-    margin-top: 15px;
-    font-size: 12px;
-    color: #aaa;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="container">
-<div class="card">
-
-<!-- LOGO -->
-<img src="logo.png" class="logo">
-
-<!-- NAME -->
-<h1>Sadiya Zehra</h1>
-<p>Business Development Manager</p>
-<p>TeraSyncTech</p>
-
-<p><b>Helping Businesses Grow Digitally 🚀</b></p>
-
-<!-- BUTTONS -->
-<a class="btn" href="tel:+917549126937">📞 Call Now</a>
-
-<a class="btn" href="https://wa.me/917549126937?text=Hi%20I%20want%20digital%20services">
-💬 WhatsApp
-</a>
-
-<a class="btn" href="https://www.terasynctech.com">
-🌐 Visit Website
-</a>
-
-<a class="btn" href="sadiya.vcf" download>
-📥 Save Contact
-</a>
-
-<!-- MAP ONLY (UPDATED) -->
-<a class="btn" href="https://maps.app.goo.gl/nY2oyjqk4dhJVGFB8" target="_blank">
-📍 View Location
-</a>
-
-<!-- QR -->
-<img src="qr.png" class="qr">
-<p><b>Scan to connect instantly</b></p>
-
-<!-- FOOTER -->
-<div class="footer">
-“Let’s Build Your Digital Future” 🚀
-</div>
-
-</div>
-</div>
-
-</body>
-</html>
+    margin-bottom: 15
