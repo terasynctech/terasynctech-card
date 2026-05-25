@@ -29,7 +29,7 @@ content="Gulam Hamid | TeraSyncTech">
 content="Helping Businesses Go Digital & Increase Sales 🚀">
 
 <meta property="og:image"
-content="https://terasynctech.github.io/terasynctech-card/logo.png?v=5">
+content="https://terasynctech.github.io/terasynctech-card/logo.png?v=8">
 
 <meta property="og:url"
 content="https://terasynctech.github.io/terasynctech-card/">
@@ -52,12 +52,12 @@ content="Gulam Hamid | TeraSyncTech">
 content="Helping Businesses Go Digital & Increase Sales 🚀">
 
 <meta name="twitter:image"
-content="https://terasynctech.github.io/terasynctech-card/logo.png?v=5">
+content="https://terasynctech.github.io/terasynctech-card/logo.png?v=8">
 
 <!-- FAVICON -->
 
 <link rel="icon"
-href="logo.png?v=5">
+href="logo.png?v=8">
 
 <style>
 
@@ -84,6 +84,8 @@ body{
     text-align:center;
 
     overflow-x:hidden;
+
+    padding-bottom:90px;
 }
 
 /* ===== ANIMATED GLOW ===== */
@@ -331,30 +333,6 @@ h1{
     line-height:1.5;
 }
 
-/* ===== GALLERY ===== */
-
-.gallery{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:10px;
-
-    margin-top:15px;
-}
-
-.gallery img{
-
-    width:100%;
-
-    border-radius:12px;
-
-    box-shadow:
-    0 0 12px rgba(0,180,255,0.25);
-}
-
 /* ===== QR ===== */
 
 .qr{
@@ -404,6 +382,8 @@ h1{
     color:white;
 
     outline:none;
+
+    font-size:15px;
 }
 
 .lead-form textarea{
@@ -434,6 +414,8 @@ h1{
     cursor:pointer;
 
     margin-top:10px;
+
+    font-size:16px;
 }
 
 /* ===== FLOATING WHATSAPP ===== */
@@ -442,7 +424,7 @@ h1{
 
     position:fixed;
 
-    bottom:20px;
+    bottom:90px;
     right:20px;
 
     width:60px;
@@ -469,6 +451,41 @@ h1{
     z-index:999;
 }
 
+/* ===== BOTTOM BAR ===== */
+
+.bottom-bar{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    background:#001a33;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    padding:12px 0;
+
+    z-index:999;
+
+    box-shadow:
+    0 -2px 12px rgba(0,0,0,0.3);
+}
+
+.bottom-bar a{
+
+    color:white;
+
+    font-size:26px;
+
+    text-decoration:none;
+}
+
 /* ===== FOOTER ===== */
 
 .footer{
@@ -479,7 +496,7 @@ h1{
 
     font-size:13px;
 
-    line-height:1.6;
+    line-height:1.8;
 }
 
 </style>
@@ -492,7 +509,7 @@ h1{
 
 <!-- LOGO -->
 
-<img src="logo.png?v=5"
+<img src="logo.png?v=8"
 class="logo">
 
 <!-- TEXT -->
@@ -526,8 +543,15 @@ href="https://wa.me/917633801161?text=Hi%20I%20want%20a%20digital%20card">
 </a>
 
 <a class="btn"
-href="https://www.terasynctech.com">
+href="https://www.terasynctech.com"
+target="_blank">
 🌐 Visit Website
+</a>
+
+<a class="btn"
+href="https://www.terasynctech.com/portfolio"
+target="_blank">
+🖼️ View Portfolio
 </a>
 
 <a class="btn"
@@ -543,17 +567,20 @@ target="_blank">
 </a>
 
 <a class="btn"
-href="https://www.linkedin.com/in/gulam-hamid-890ba14b">
+href="https://www.linkedin.com/in/gulam-hamid-890ba14b"
+target="_blank">
 💼 LinkedIn Profile
 </a>
 
 <a class="btn"
-href="https://share.google/lMdj9W7nAFpUWroDI">
+href="https://share.google/lMdj9W7nAFpUWroDI"
+target="_blank">
 ⭐ Google Reviews
 </a>
 
 <a class="btn"
-href="https://instagram.com/gulamhamid164">
+href="https://instagram.com/gulamhamid164"
+target="_blank">
 📸 Instagram
 </a>
 
@@ -654,17 +681,21 @@ href="upi://pay?pa=gulamhamid164@okaxis&pn=Gulam%20Hamid">
 📩 Send Inquiry
 </h3>
 
-<form class="lead-form">
+<form class="lead-form"
+onsubmit="sendInquiry(event)">
 
 <input type="text"
+id="name"
 placeholder="Your Name"
 required>
 
 <input type="tel"
+id="mobile"
 placeholder="Mobile Number"
 required>
 
 <textarea
+id="message"
 placeholder="Your Requirement">
 </textarea>
 
@@ -684,7 +715,7 @@ Submit Inquiry
 
 <br><br>
 
-Powered by TeraCard Premium
+Powered by TeraSyncTech
 
 </div>
 
@@ -697,6 +728,78 @@ class="floating-whatsapp"
 target="_blank">
 💬
 </a>
+
+<!-- BOTTOM BAR -->
+
+<div class="bottom-bar">
+
+<a href="tel:+917633801161">
+📞
+</a>
+
+<a href="https://wa.me/917633801161">
+💬
+</a>
+
+<a href="https://www.terasynctech.com">
+🌐
+</a>
+
+<a href="https://www.terasynctech.com/portfolio">
+🖼️
+</a>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function sendInquiry(event){
+
+event.preventDefault();
+
+let name =
+document.getElementById("name").value;
+
+let mobile =
+document.getElementById("mobile").value;
+
+let message =
+document.getElementById("message").value;
+
+let whatsappMessage =
+`Hi TeraSyncTech,%0A%0A
+Name: ${name}%0A
+Mobile: ${mobile}%0A
+Requirement: ${message}`;
+
+window.open(
+`https://wa.me/917633801161?text=${whatsappMessage}`,
+'_blank'
+);
+
+}
+
+function shareCard(){
+
+if(navigator.share){
+
+navigator.share({
+
+title:"TeraSyncTech",
+
+text:"Helping Businesses Go Digital 🚀",
+
+url:"https://terasynctech.github.io/terasynctech-card/"
+
+});
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
