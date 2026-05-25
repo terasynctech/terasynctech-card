@@ -4,23 +4,12 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-Gulam Hamid | TeraSyncTech
-</title>
-
-<!-- SEO -->
+<title>Gulam Hamid | TeraSyncTech</title>
 
 <meta name="description"
 content="ERP Software, Website Development, Digital Marketing & Mobile Apps">
-
-<!-- OPEN GRAPH -->
-
-<meta property="og:type"
-content="website">
 
 <meta property="og:title"
 content="Gulam Hamid | TeraSyncTech">
@@ -34,553 +23,227 @@ content="https://terasynctech.github.io/terasynctech-card/logo.png?v=10">
 <meta property="og:url"
 content="https://terasynctech.github.io/terasynctech-card/">
 
-<meta property="og:image:width"
-content="1200">
-
-<meta property="og:image:height"
-content="630">
-
-<!-- TWITTER -->
-
-<meta name="twitter:card"
-content="summary_large_image">
-
-<meta name="twitter:title"
-content="Gulam Hamid | TeraSyncTech">
-
-<meta name="twitter:description"
-content="Helping Businesses Go Digital & Increase Sales 🚀">
-
-<meta name="twitter:image"
-content="https://terasynctech.github.io/terasynctech-card/logo.png?v=10">
-
-<!-- FAVICON -->
-
 <link rel="icon"
 href="logo.png?v=10">
 
 <style>
 
-/* ===== BODY ===== */
-
 body{
-
 margin:0;
 padding:0;
-
-font-family:
-'Segoe UI',
-sans-serif;
-
-background:
-linear-gradient(
-135deg,
-#000000,
-#081b33,
-#001f4d);
-
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#000000,#081b33,#001f4d);
 color:white;
-
 text-align:center;
-
 overflow-x:hidden;
-
-padding-bottom:90px;
+padding-bottom:100px;
+transition:0.5s;
 }
 
-/* ===== GLOW ===== */
+body.light{
+background:linear-gradient(135deg,#f4f4f4,#dcefff,#ffffff);
+color:#111;
+}
 
 body::before{
-
 content:"";
-
 position:fixed;
-
 width:450px;
 height:450px;
-
-background:
-radial-gradient(
-circle,
-rgba(0,180,255,0.35),
-transparent);
-
+background:radial-gradient(circle,rgba(0,180,255,0.35),transparent);
 top:-120px;
 left:-120px;
-
 z-index:-1;
-
-animation:
-glowMove 8s infinite alternate;
+animation:glowMove 8s infinite alternate;
 }
 
 @keyframes glowMove{
-
-from{
-transform:translate(0,0);
+from{transform:translate(0,0);}
+to{transform:translate(200px,160px);}
 }
-
-to{
-transform:translate(200px,160px);
-}
-}
-
-/* ===== CARD ===== */
 
 .card{
-
-max-width:430px;
-
+max-width:420px;
 margin:25px auto;
-
-padding:28px 22px;
-
-border-radius:30px;
-
-background:
-rgba(255,255,255,0.06);
-
-backdrop-filter:
-blur(16px);
-
-box-shadow:
-0 0 35px rgba(0,180,255,0.25);
-
-border:
-1px solid rgba(255,255,255,0.08);
-
-animation:
-fadeUp 1s ease;
+padding:28px 24px;
+border-radius:28px;
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(16px);
+box-shadow:0 0 35px rgba(0,180,255,0.25);
+border:1px solid rgba(255,255,255,0.08);
 }
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(30px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* ===== LOGO ===== */
 
 .logo{
-
 width:140px;
 height:140px;
-
 object-fit:contain;
-
 display:block;
-
 margin:auto;
-
 border-radius:20px;
-
 background:white;
-
-padding:8px;
-
-box-shadow:
-0 0 25px rgba(0,180,255,0.35);
-
-animation:
-float 3s infinite ease-in-out;
+padding:6px;
+box-shadow:0 0 25px rgba(0,180,255,0.35);
 }
-
-@keyframes float{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-8px);
-}
-
-100%{
-transform:translateY(0);
-}
-}
-
-/* ===== TEXT ===== */
 
 h1{
-
 margin-top:18px;
-
 font-size:30px;
-
 color:#00c6ff;
 }
 
 .designation{
-
 font-weight:bold;
-
 margin-top:5px;
 }
 
 .company{
-
 color:#00c6ff;
-
 font-size:18px;
-
-margin-top:4px;
+margin-top:5px;
 }
 
 .tagline{
-
-margin-top:14px;
-
-color:#d6e7ff;
-
+margin-top:15px;
 line-height:1.7;
 }
 
-/* ===== BUTTON ===== */
-
 .btn{
-
 display:block;
-
 margin:14px auto;
-
 padding:14px;
-
 width:90%;
-
 border-radius:40px;
-
 text-decoration:none;
-
 font-weight:bold;
-
 color:white;
-
-background:
-linear-gradient(
-90deg,
-#00c6ff,
-#0072ff);
-
+background:linear-gradient(90deg,#00c6ff,#0072ff);
 transition:0.3s;
-
-box-shadow:
-0 4px 18px rgba(0,180,255,0.25);
-
-animation:
-pulse 2s infinite;
+border:none;
+cursor:pointer;
+font-size:15px;
 }
 
 .btn:hover{
-
 transform:scale(1.05);
 }
 
-@keyframes pulse{
-
-0%{
-box-shadow:0 0 0px #00c6ff;
-}
-
-50%{
-box-shadow:0 0 18px #00c6ff;
-}
-
-100%{
-box-shadow:0 0 0px #00c6ff;
-}
-}
-
-/* ===== SECTION ===== */
-
 .section{
-
 margin-top:28px;
-
-background:
-rgba(255,255,255,0.04);
-
+background:rgba(255,255,255,0.04);
 border-radius:20px;
-
 padding:18px;
-
-border:
-1px solid rgba(255,255,255,0.08);
 }
-
-/* ===== SERVICES ===== */
 
 .services{
-
 text-align:left;
 }
 
 .services li{
-
 margin:12px 0;
-
-color:#d9e8ff;
-
 line-height:1.5;
 }
 
-/* ===== FEATURES ===== */
-
-.feature-box{
-
-display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
-gap:12px;
-
-margin-top:18px;
-}
-
-.feature-item{
-
-background:
-rgba(255,255,255,0.08);
-
-padding:15px;
-
-border-radius:15px;
-
-font-size:14px;
-
-font-weight:bold;
-}
-
-/* ===== QR ===== */
-
 .qr{
-
 width:170px;
-
 border-radius:15px;
-
 margin-top:12px;
-
-box-shadow:
-0 0 15px rgba(0,180,255,0.35);
 }
-
-/* ===== FORM ===== */
 
 .lead-form input,
 .lead-form textarea{
-
 width:90%;
-
 padding:12px;
-
 margin:10px 0;
-
 border:none;
-
 border-radius:12px;
-
-background:
-rgba(255,255,255,0.08);
-
+background:rgba(255,255,255,0.08);
 color:white;
-
 outline:none;
-
-font-size:15px;
-}
-
-.lead-form textarea{
-
-min-height:90px;
 }
 
 .lead-form button{
-
 width:95%;
-
 padding:14px;
-
 border:none;
-
 border-radius:35px;
-
 font-weight:bold;
-
-background:
-linear-gradient(
-90deg,
-#00c6ff,
-#0072ff);
-
+background:linear-gradient(90deg,#00c6ff,#0072ff);
 color:white;
-
 cursor:pointer;
-
-margin-top:10px;
-
-font-size:16px;
 }
 
-/* ===== TESTIMONIAL ===== */
-
-.testimonial{
-
-background:
-rgba(255,255,255,0.08);
-
-padding:18px;
-
-border-radius:16px;
-
-line-height:1.8;
-
+.feature-box{
+background:rgba(255,255,255,0.05);
+padding:15px;
 margin-top:15px;
-}
-
-/* ===== THEME BUTTON ===== */
-
-.theme-btn{
-
-padding:12px 18px;
-
-margin:8px;
-
-border:none;
-
-border-radius:30px;
-
-background:
-linear-gradient(
-90deg,
-#00c6ff,
-#0072ff);
-
-color:white;
-
-font-weight:bold;
-
+border-radius:15px;
 cursor:pointer;
+transition:0.3s;
 }
 
-/* ===== LANGUAGE ===== */
-
-.language-select{
-
-width:90%;
-
-padding:14px;
-
-border:none;
-
-border-radius:15px;
-
-background:
-rgba(255,255,255,0.08);
-
-color:white;
-
-font-size:15px;
+.feature-box:hover{
+transform:scale(1.03);
+background:rgba(255,255,255,0.08);
 }
 
-/* ===== IFRAME ===== */
-
-iframe{
-
-border:none;
-
-border-radius:15px;
-
-background:white;
-
-box-shadow:
-0 0 20px rgba(0,180,255,0.25);
-}
-
-/* ===== FLOATING WHATSAPP ===== */
-
-.floating-whatsapp{
-
-position:fixed;
-
-bottom:90px;
-right:20px;
-
-width:60px;
-height:60px;
-
-background:#25D366;
-
-color:white;
-
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-justify-content:center;
-
+.counter{
 font-size:28px;
-
-text-decoration:none;
-
-box-shadow:
-0 0 18px rgba(0,0,0,0.35);
-
-z-index:999;
+font-weight:bold;
+color:#00c6ff;
 }
-
-/* ===== BOTTOM BAR ===== */
 
 .bottom-bar{
-
 position:fixed;
-
 bottom:0;
-
 left:0;
-
 width:100%;
-
 background:#001a33;
-
 display:flex;
-
 justify-content:space-around;
-
 padding:12px 0;
-
 z-index:999;
 }
 
 .bottom-bar a{
-
 color:white;
-
 font-size:26px;
-
 text-decoration:none;
 }
 
-/* ===== FOOTER ===== */
-
 .footer{
-
 margin-top:28px;
-
-color:#b5d7ff;
-
 font-size:13px;
-
 line-height:1.8;
+}
+
+.chat-box{
+display:none;
+position:fixed;
+bottom:90px;
+right:20px;
+width:300px;
+background:#0b1f3a;
+padding:15px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+z-index:9999;
+}
+
+.chat-box input{
+width:100%;
+padding:10px;
+border:none;
+border-radius:10px;
+margin-top:10px;
+}
+
+.lang-buttons button{
+margin:5px;
+padding:10px 15px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-weight:bold;
 }
 
 </style>
@@ -594,11 +257,12 @@ line-height:1.8;
 <img src="logo.png?v=10"
 class="logo">
 
-<h1>
+<h1 id="name">
 Gulam Hamid
 </h1>
 
-<div class="designation">
+<div class="designation"
+id="designation">
 Chief Operating Officer (COO)
 </div>
 
@@ -606,7 +270,8 @@ Chief Operating Officer (COO)
 TeraSyncTech
 </div>
 
-<div class="tagline">
+<div class="tagline"
+id="tagline">
 Helping Businesses Go Digital & Increase Sales 🚀
 </div>
 
@@ -656,8 +321,6 @@ target="_blank">
 📸 Instagram
 </a>
 
-<!-- SERVICES -->
-
 <div class="section">
 
 <h3>
@@ -667,83 +330,32 @@ target="_blank">
 <ul class="services">
 
 <li>💻 ERP Software Development</li>
-
 <li>🌐 Website Development</li>
-
 <li>📈 SEO & Google Ranking</li>
-
 <li>📱 Mobile App Development</li>
-
 <li>🎨 Poster & Content Design</li>
-
 <li>📢 Digital Marketing</li>
-
 <li>🤖 WhatsApp Automation</li>
-
 <li>💳 Smart Digital Cards</li>
 
 </ul>
 
 </div>
 
-<!-- PREMIUM FEATURES -->
-
 <div class="section">
 
 <h3>
-🔥 Premium Features
+📲 Scan QR To Connect
 </h3>
 
-<div class="feature-box">
+<img src="qr.png"
+class="qr">
 
-<div class="feature-item">
-🤖 AI Chat Support
-</div>
-
-<div class="feature-item">
-📊 Lead Dashboard
-</div>
-
-<div class="feature-item">
-🌍 Multi Language
-</div>
-
-<div class="feature-item">
-🎨 Dynamic Themes
-</div>
-
-<div class="feature-item">
-📈 Visitor Counter
-</div>
-
-<div class="feature-item">
-💼 Admin Panel
-</div>
+<p>
+Scan to open digital card instantly
+</p>
 
 </div>
-
-</div>
-
-<!-- TESTIMONIAL -->
-
-<div class="section">
-
-<h3>
-💬 Client Testimonials
-</h3>
-
-<div class="testimonial"
-id="testimonial">
-
-“Professional ERP & Website Services”
-<br><br>
-⭐️⭐️⭐️⭐️⭐️
-
-</div>
-
-</div>
-
-<!-- BROCHURE -->
 
 <div class="section">
 
@@ -751,111 +363,13 @@ id="testimonial">
 📄 Company Brochure
 </h3>
 
-<iframe
-src="brochure.pdf"
-width="100%"
-height="400">
-</iframe>
-
-<br><br>
-
 <a class="btn"
 href="brochure.pdf"
-download>
-📥 Download Brochure
+target="_blank">
+📥 Open PDF Brochure
 </a>
 
 </div>
-
-<!-- THEME -->
-
-<div class="section">
-
-<h3>
-🎨 Change Theme
-</h3>
-
-<button class="theme-btn"
-onclick="changeTheme('#001f4d')">
-Blue
-</button>
-
-<button class="theme-btn"
-onclick="changeTheme('#3b0000')">
-Red
-</button>
-
-<button class="theme-btn"
-onclick="changeTheme('#013220')">
-Green
-</button>
-
-</div>
-
-<!-- LANGUAGE -->
-
-<div class="section">
-
-<h3>
-🌍 Select Language
-</h3>
-
-<select
-class="language-select"
-onchange="changeLanguage(this.value)">
-
-<option value="en">
-English
-</option>
-
-<option value="hi">
-Hindi
-</option>
-
-<option value="ar">
-Arabic
-</option>
-
-</select>
-
-</div>
-
-<!-- QR -->
-
-<div class="section">
-
-<h3>
-📲 Scan Physical Card
-</h3>
-
-<img src="qr.png"
-class="qr">
-
-<p>
-Scan QR from your physical card to instantly open digital profile & save contact.
-</p>
-
-</div>
-
-<!-- VISITOR -->
-
-<div class="section">
-
-<h3>
-👁 Visitor Counter
-</h3>
-
-<h1 id="visitorCounter">
-1000
-</h1>
-
-<p>
-People visited this digital card
-</p>
-
-</div>
-
-<!-- LEAD FORM -->
 
 <div class="section">
 
@@ -867,7 +381,7 @@ People visited this digital card
 onsubmit="sendInquiry(event)">
 
 <input type="text"
-id="name"
+id="nameInput"
 placeholder="Your Name"
 required>
 
@@ -889,7 +403,78 @@ Submit Inquiry
 
 </div>
 
-<!-- FOOTER -->
+<div class="section">
+
+<h3>
+🌍 Multi Language
+</h3>
+
+<div class="lang-buttons">
+
+<button onclick="setEnglish()">
+English
+</button>
+
+<button onclick="setHindi()">
+हिन्दी
+</button>
+
+<button onclick="setArabic()">
+العربية
+</button>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h3>
+🎨 Dynamic Themes
+</h3>
+
+<button class="btn"
+onclick="toggleTheme()">
+Switch Theme
+</button>
+
+</div>
+
+<div class="section">
+
+<h3>
+📈 Visitor Counter
+</h3>
+
+<div class="counter"
+id="visitorCount">
+0
+</div>
+
+</div>
+
+<div class="section">
+
+<h3>
+⭐ Premium Features
+</h3>
+
+<div class="feature-box"
+onclick="openChat()">
+🤖 AI Chat Support
+</div>
+
+<div class="feature-box"
+onclick="showDashboard()">
+📊 Lead Dashboard
+</div>
+
+<div class="feature-box"
+onclick="showAdmin()">
+💼 Admin Panel
+</div>
+
+</div>
 
 <div class="footer">
 
@@ -903,15 +488,21 @@ Powered by TeraSyncTech
 
 </div>
 
-<!-- FLOATING WHATSAPP -->
+<div class="chat-box"
+id="chatBox">
 
-<a href="https://wa.me/917633801161"
-class="floating-whatsapp"
-target="_blank">
-💬
-</a>
+<h3>
+🤖 AI Assistant
+</h3>
 
-<!-- BOTTOM BAR -->
+<p>
+Hello 👋 How can we help you?
+</p>
+
+<input type="text"
+placeholder="Type your message...">
+
+</div>
 
 <div class="bottom-bar">
 
@@ -933,18 +524,14 @@ target="_blank">
 
 </div>
 
-<!-- JAVASCRIPT -->
-
 <script>
-
-/* ===== INQUIRY ===== */
 
 function sendInquiry(event){
 
 event.preventDefault();
 
 let name =
-document.getElementById("name").value;
+document.getElementById("nameInput").value;
 
 let mobile =
 document.getElementById("mobile").value;
@@ -953,104 +540,105 @@ let message =
 document.getElementById("message").value;
 
 let whatsappMessage =
-`Hi TeraSyncTech,%0A%0A
-Name: ${name}%0A
-Mobile: ${mobile}%0A
+`Hi TeraSyncTech,
+
+Name: ${name}
+Mobile: ${mobile}
 Requirement: ${message}`;
 
 window.open(
-`https://wa.me/917633801161?text=${whatsappMessage}`,
+`https://wa.me/917633801161?text=${encodeURIComponent(whatsappMessage)}`,
 '_blank'
 );
 
 }
 
-/* ===== TESTIMONIAL ===== */
+function toggleTheme(){
 
-const testimonials = [
-
-"“Professional ERP & Website Services”<br><br>⭐️⭐️⭐️⭐️⭐️",
-
-"“Very Fast & Premium Design Quality”<br><br>⭐️⭐️⭐️⭐️⭐️",
-
-"“Best Digital Marketing Support”<br><br>⭐️⭐️⭐️⭐️⭐️"
-
-];
-
-let testimonialIndex = 0;
-
-setInterval(() => {
-
-testimonialIndex++;
-
-if(testimonialIndex >= testimonials.length){
-
-testimonialIndex = 0;
+document.body.classList.toggle("light");
 
 }
 
-document.getElementById(
-"testimonial"
-).innerHTML =
-testimonials[testimonialIndex];
+function openChat(){
 
-},3000);
+let chat =
+document.getElementById("chatBox");
 
-/* ===== VISITOR COUNTER ===== */
+if(chat.style.display==="block"){
+
+chat.style.display="none";
+
+}else{
+
+chat.style.display="block";
+
+}
+
+}
+
+function showDashboard(){
+
+alert(
+"📊 Lead Dashboard\n\nTotal Leads: 24\nToday's Leads: 4\nPending Followups: 6"
+);
+
+}
+
+function showAdmin(){
+
+alert(
+"💼 Admin Panel\n\nPremium Admin Features Coming Soon 🚀"
+);
+
+}
+
+function setEnglish(){
+
+document.getElementById("designation").innerHTML =
+"Chief Operating Officer (COO)";
+
+document.getElementById("tagline").innerHTML =
+"Helping Businesses Go Digital & Increase Sales 🚀";
+
+}
+
+function setHindi(){
+
+document.getElementById("designation").innerHTML =
+"मुख्य परिचालन अधिकारी (COO)";
+
+document.getElementById("tagline").innerHTML =
+"हम व्यवसायों को डिजिटल बनाने में मदद करते हैं 🚀";
+
+}
+
+function setArabic(){
+
+document.getElementById("designation").innerHTML =
+"الرئيس التنفيذي للعمليات";
+
+document.getElementById("tagline").innerHTML =
+"نساعد الشركات على التحول الرقمي 🚀";
+
+}
 
 let count =
 localStorage.getItem("visitorCount");
 
 if(!count){
 
-count = 1000;
-}
+count = 1;
 
-count++;
+}else{
 
-localStorage.setItem(
-"visitorCount",
-count
-);
-
-document.getElementById(
-"visitorCounter"
-).innerText = count;
-
-/* ===== THEME ===== */
-
-function changeTheme(color){
-
-document.body.style.background =
-`linear-gradient(
-135deg,
-#000000,
-${color},
-#001122)`;
+count = parseInt(count) + 1;
 
 }
 
-/* ===== LANGUAGE ===== */
+localStorage.setItem("visitorCount",count);
 
-function changeLanguage(lang){
-
-if(lang == "hi"){
-
-alert(
-"हिंदी भाषा जल्द आ रही है"
-);
-
-}
-
-if(lang == "ar"){
-
-alert(
-"اللغة العربية قريبا"
-);
-
-}
-
-}
+document.getElementById("visitorCount").innerHTML =
+count;
 
 </script>
 
