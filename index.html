@@ -1,3 +1,8 @@
+<!-- =========================================
+TERASYNC TECH PREMIUM DIGITAL CARD
+FULL FINAL VERSION
+========================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,15 +23,22 @@ content="Gulam Hamid | TeraSyncTech">
 content="Helping Businesses Go Digital & Increase Sales 🚀">
 
 <meta property="og:image"
-content="https://terasynctech.github.io/terasynctech-card/logo.png?v=15">
+content="https://terasynctech.github.io/terasynctech-card/logo.png?v=20">
 
 <meta property="og:url"
 content="https://terasynctech.github.io/terasynctech-card/">
 
 <link rel="icon"
-href="logo.png?v=15">
+href="logo.png?v=20">
+
+<!-- OCR LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 
 <style>
+
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
@@ -58,14 +70,18 @@ animation:glowMove 8s infinite alternate;
 }
 
 @keyframes glowMove{
-from{transform:translate(0,0);}
-to{transform:translate(200px,160px);}
+from{
+transform:translate(0,0);
+}
+to{
+transform:translate(200px,160px);
+}
 }
 
 .card{
-max-width:420px;
+max-width:430px;
 margin:25px auto;
-padding:28px 24px;
+padding:28px 22px;
 border-radius:28px;
 background:rgba(255,255,255,0.06);
 backdrop-filter:blur(16px);
@@ -79,10 +95,23 @@ height:140px;
 object-fit:contain;
 display:block;
 margin:auto;
-border-radius:20px;
+border-radius:22px;
 background:white;
-padding:6px;
+padding:8px;
 box-shadow:0 0 25px rgba(0,180,255,0.35);
+animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+100%{
+transform:translateY(0);
+}
 }
 
 h1{
@@ -93,25 +122,26 @@ color:#00c6ff;
 
 .designation{
 font-weight:bold;
-margin-top:5px;
+margin-top:6px;
 }
 
 .company{
 color:#00c6ff;
 font-size:18px;
-margin-top:5px;
+margin-top:6px;
 }
 
 .tagline{
 margin-top:15px;
 line-height:1.7;
+font-size:15px;
 }
 
 .btn{
 display:block;
 margin:14px auto;
 padding:14px;
-width:90%;
+width:92%;
 border-radius:40px;
 text-decoration:none;
 font-weight:bold;
@@ -121,21 +151,23 @@ transition:0.3s;
 border:none;
 cursor:pointer;
 font-size:15px;
+box-shadow:0 5px 18px rgba(0,180,255,0.25);
 }
 
 .btn:hover{
-transform:scale(1.05);
+transform:scale(1.04);
 }
 
 .section{
 margin-top:28px;
-background:rgba(255,255,255,0.04);
+background:rgba(255,255,255,0.05);
 border-radius:20px;
 padding:18px;
 }
 
 .services{
 text-align:left;
+padding-left:18px;
 }
 
 .services li{
@@ -147,6 +179,7 @@ line-height:1.5;
 width:170px;
 border-radius:15px;
 margin-top:12px;
+box-shadow:0 0 20px rgba(0,180,255,0.35);
 }
 
 .lead-form input,
@@ -162,6 +195,10 @@ outline:none;
 font-size:15px;
 }
 
+.lead-form textarea{
+min-height:100px;
+}
+
 .lead-form button{
 width:95%;
 padding:14px;
@@ -175,8 +212,8 @@ font-size:16px;
 }
 
 .feature-box{
-background:rgba(255,255,255,0.05);
-padding:15px;
+background:rgba(255,255,255,0.06);
+padding:16px;
 margin-top:15px;
 border-radius:15px;
 cursor:pointer;
@@ -186,11 +223,11 @@ font-weight:bold;
 
 .feature-box:hover{
 transform:scale(1.03);
-background:rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.10);
 }
 
 .counter{
-font-size:30px;
+font-size:32px;
 font-weight:bold;
 color:#00c6ff;
 }
@@ -205,6 +242,7 @@ display:flex;
 justify-content:space-around;
 padding:12px 0;
 z-index:999;
+box-shadow:0 -2px 15px rgba(0,0,0,0.4);
 }
 
 .bottom-bar a{
@@ -217,6 +255,7 @@ text-decoration:none;
 margin-top:28px;
 font-size:13px;
 line-height:1.8;
+color:#cce8ff;
 }
 
 /* CHAT */
@@ -235,7 +274,7 @@ z-index:9999;
 }
 
 .chat-messages{
-height:220px;
+height:230px;
 overflow-y:auto;
 text-align:left;
 padding:10px;
@@ -260,12 +299,14 @@ text-align:right;
 }
 
 .chat-input{
-width:92%;
+width:100%;
 padding:12px;
 border:none;
 border-radius:12px;
 outline:none;
 }
+
+/* LANGUAGE */
 
 .lang-buttons button{
 margin:5px;
@@ -286,6 +327,32 @@ border-radius:15px;
 line-height:1.8;
 text-align:left;
 display:none;
+word-break:break-word;
+}
+
+/* TESTIMONIAL */
+
+.testimonial{
+padding:15px;
+background:rgba(255,255,255,0.05);
+border-radius:15px;
+margin-top:15px;
+line-height:1.8;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:15px;
+}
+
+.gallery img{
+width:100%;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,180,255,0.25);
 }
 
 </style>
@@ -296,7 +363,7 @@ display:none;
 
 <div class="card">
 
-<img src="logo.png?v=15"
+<img src="logo.png?v=20"
 class="logo">
 
 <h1 id="name">
@@ -363,6 +430,8 @@ target="_blank">
 📸 Instagram
 </a>
 
+<!-- SERVICES -->
+
 <div class="section">
 
 <h3>
@@ -384,6 +453,8 @@ target="_blank">
 
 </div>
 
+<!-- QR -->
+
 <div class="section">
 
 <h3>
@@ -398,6 +469,42 @@ Scan to open digital card instantly
 </p>
 
 </div>
+
+<!-- GALLERY -->
+
+<div class="section">
+
+<h3>
+🖼️ Portfolio Gallery
+</h3>
+
+<div class="gallery">
+
+<img src="gallery1.jpg">
+<img src="gallery2.jpg">
+<img src="gallery3.jpg">
+<img src="gallery4.jpg">
+
+</div>
+
+</div>
+
+<!-- TESTIMONIAL -->
+
+<div class="section">
+
+<h3>
+⭐ Client Testimonials
+</h3>
+
+<div class="testimonial"
+id="testimonialBox">
+“TeraSyncTech helped us grow digitally with amazing website and ERP solutions.”
+</div>
+
+</div>
+
+<!-- INQUIRY -->
 
 <div class="section">
 
@@ -431,6 +538,8 @@ Submit Inquiry
 
 </div>
 
+<!-- MULTI LANGUAGE -->
+
 <div class="section">
 
 <h3>
@@ -455,6 +564,8 @@ English
 
 </div>
 
+<!-- THEME -->
+
 <div class="section">
 
 <h3>
@@ -468,6 +579,8 @@ Switch Theme
 
 </div>
 
+<!-- VISITOR -->
+
 <div class="section">
 
 <h3>
@@ -480,6 +593,8 @@ id="visitorCount">
 </div>
 
 </div>
+
+<!-- PREMIUM -->
 
 <div class="section">
 
@@ -504,7 +619,7 @@ onclick="showAdmin()">
 
 </div>
 
-<!-- OCR SECTION -->
+<!-- OCR -->
 
 <div class="section">
 
@@ -539,6 +654,8 @@ onclick="downloadOCRContact()">
 
 </div>
 
+<!-- FOOTER -->
+
 <div class="footer">
 
 “Let’s Build Your Digital Future” 🚀
@@ -551,7 +668,7 @@ Powered by TeraSyncTech
 
 </div>
 
-<!-- AI CHAT -->
+<!-- CHAT -->
 
 <div class="chat-box"
 id="chatBox">
@@ -600,11 +717,9 @@ onkeydown="handleChat(event)">
 
 </div>
 
-<!-- OCR LIBRARY -->
-
-<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-
 <script>
+
+/* INQUIRY */
 
 function sendInquiry(event){
 
@@ -633,9 +748,13 @@ window.open(
 
 }
 
+/* THEME */
+
 function toggleTheme(){
 document.body.classList.toggle("light");
 }
+
+/* CHAT */
 
 function openChat(){
 
@@ -688,7 +807,12 @@ reply =
 
 else if(text.toLowerCase().includes("digital card")){
 reply =
-"We create smart premium digital business cards with QR & WhatsApp integration 💳";
+"We create smart premium digital business cards 💳";
+}
+
+else if(text.toLowerCase().includes("seo")){
+reply =
+"We help businesses rank on Google with SEO 🚀";
 }
 
 setTimeout(()=>{
@@ -707,13 +831,17 @@ input.value="";
 
 }
 
+/* DASHBOARD */
+
 function showDashboard(){
 
 alert(
-"📊 Lead Dashboard\n\nTotal Leads: 24\nToday's Leads: 4\nPending Followups: 6\nInterested Clients: 11"
+"📊 Lead Dashboard\n\nTotal Leads: 24\nToday's Leads: 4\nInterested Clients: 11"
 );
 
 }
+
+/* ADMIN */
 
 function showAdmin(){
 
@@ -722,6 +850,8 @@ alert(
 );
 
 }
+
+/* LANGUAGE */
 
 function setEnglish(){
 
@@ -752,6 +882,8 @@ document.getElementById("tagline").innerHTML =
 "نساعد الشركات على التحول الرقمي 🚀";
 
 }
+
+/* VISITOR COUNTER */
 
 let count =
 localStorage.getItem("visitorCount");
@@ -888,6 +1020,33 @@ link.download =
 link.click();
 
 }
+
+/* TESTIMONIAL SLIDER */
+
+const testimonials = [
+
+"“TeraSyncTech helped us grow digitally with amazing ERP solutions.”",
+
+"“Professional website development and SEO services.”",
+
+"“Best digital card and WhatsApp automation provider.”"
+
+];
+
+let testiIndex = 0;
+
+setInterval(()=>{
+
+testiIndex++;
+
+if(testiIndex >= testimonials.length){
+testiIndex = 0;
+}
+
+document.getElementById("testimonialBox").innerHTML =
+testimonials[testiIndex];
+
+},3000);
 
 </script>
 
