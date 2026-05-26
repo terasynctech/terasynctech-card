@@ -18,13 +18,13 @@ content="Gulam Hamid | TeraSyncTech">
 content="Helping Businesses Go Digital & Increase Sales 🚀">
 
 <meta property="og:image"
-content="https://terasynctech.github.io/terasynctech-card/logo.png?v=12">
+content="https://terasynctech.github.io/terasynctech-card/logo.png?v=15">
 
 <meta property="og:url"
 content="https://terasynctech.github.io/terasynctech-card/">
 
 <link rel="icon"
-href="logo.png?v=12">
+href="logo.png?v=15">
 
 <style>
 
@@ -276,6 +276,18 @@ cursor:pointer;
 font-weight:bold;
 }
 
+/* OCR */
+
+.ocr-box{
+background:rgba(255,255,255,0.05);
+padding:15px;
+margin-top:15px;
+border-radius:15px;
+line-height:1.8;
+text-align:left;
+display:none;
+}
+
 </style>
 
 </head>
@@ -284,7 +296,7 @@ font-weight:bold;
 
 <div class="card">
 
-<img src="logo.png?v=12"
+<img src="logo.png?v=15"
 class="logo">
 
 <h1 id="name">
@@ -492,6 +504,41 @@ onclick="showAdmin()">
 
 </div>
 
+<!-- OCR SECTION -->
+
+<div class="section">
+
+<h3>
+📇 Scan Physical Business Card
+</h3>
+
+<p>
+Upload visiting card image to auto extract contact
+</p>
+
+<input type="file"
+id="cardImage"
+accept="image/*"
+class="btn">
+
+<button class="btn"
+onclick="scanCardOCR()">
+📸 Scan Card
+</button>
+
+<div id="ocrResult"
+class="ocr-box">
+</div>
+
+<button class="btn"
+id="saveContactBtn"
+style="display:none;"
+onclick="downloadOCRContact()">
+💾 Save Contact
+</button>
+
+</div>
+
 <div class="footer">
 
 “Let’s Build Your Digital Future” 🚀
@@ -552,6 +599,10 @@ onkeydown="handleChat(event)">
 </a>
 
 </div>
+
+<!-- OCR LIBRARY -->
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 
 <script>
 
@@ -716,8 +767,129 @@ localStorage.setItem("visitorCount",count);
 document.getElementById("visitorCount").innerHTML =
 count;
 
+/* OCR */
+
+let extractedName = "";
+let extractedPhone = "";
+
+function scanCardOCR(){
+
+const file =
+document.getElementById("cardImage").files[0];
+
+if(!file){
+
+alert("Please upload business card image");
+
+return;
+
+}
+
+document.getElementById("ocrResult").style.display =
+"block";
+
+document.getElementById("ocrResult").innerHTML =
+"⏳ Scanning business card...";
+
+Tesseract.recognize(
+file,
+'eng'
+).then(({data:{text}})=>{
+
+const phoneMatch =
+text.match(/(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}/);
+
+if(phoneMatch){
+
+extractedPhone =
+phoneMatch[0];
+
+}else{
+
+extractedPhone =
+"Not Found";
+
+}
+
+let lines =
+text.split('\n');
+
+lines =
+lines.filter(line =>
+line.trim().length > 2
+);
+
+extractedName =
+lines[0] || "Unknown";
+
+document.getElementById("ocrResult").innerHTML =
+
+`
+<h4>✅ Extracted Details</h4>
+
+<b>👤 Name:</b>
+${extractedName}
+
+<br><br>
+
+<b>📞 Mobile:</b>
+${extractedPhone}
+
+<br><br>
+
+<b>📄 Raw Text:</b>
+
+<br><br>
+
+<div style="
+max-height:180px;
+overflow:auto;
+font-size:13px;
+background:rgba(255,255,255,0.05);
+padding:10px;
+border-radius:10px;
+">
+${text.replace(/\n/g,"<br>")}
+</div>
+`;
+
+document.getElementById("saveContactBtn").style.display =
+"block";
+
+});
+
+}
+
+function downloadOCRContact(){
+
+const vcfContent =
+
+`BEGIN:VCARD
+VERSION:3.0
+FN:${extractedName}
+TEL:${extractedPhone}
+END:VCARD`;
+
+const blob =
+new Blob(
+[vcfContent],
+{type:'text/vcard'}
+);
+
+const link =
+document.createElement('a');
+
+link.href =
+URL.createObjectURL(blob);
+
+link.download =
+"scanned-contact.vcf";
+
+link.click();
+
+}
+
 </script>
 
 </body>
-
 </html>
